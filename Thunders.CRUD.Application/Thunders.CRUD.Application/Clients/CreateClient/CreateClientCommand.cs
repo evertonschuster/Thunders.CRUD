@@ -6,7 +6,9 @@ namespace Thunders.CRUD.Application.Clients.CreateClient
     {
         public CreateClientCommand()
         {
-
+            Name = string.Empty;
+            Email = string.Empty;
+            Profession = string.Empty;
         }
 
         public CreateClientCommand(string name, string email, string profession)

@@ -2,13 +2,27 @@
 
 namespace Thunders.CRUD.Domain.Clients.Models
 {
-    public class Client(Name name, Email email, string profession) : Entity(), IAggregateRoot
+    public class Client : Entity, IAggregateRoot
     {
-        public Name Name { get; private set; } = name;
+        public Client(Guid id, Name name, Email email, string profession) : base(id)
+        {
+            Name = name;
+            Email = email;
+            Profession = profession;
+        }
 
-        public Email Email { get; private set; } = email;
+        public Client(Name name, Email email, string profession)
+        {
+            Name = name;
+            Email = email;
+            Profession = profession;
+        }
 
-        public string Profession { get; private set; } = profession;
+        public Name Name { get; private set; }
+
+        public Email Email { get; private set; }
+
+        public string Profession { get; private set; }
 
 
         public void Update(Email email, string profession)
