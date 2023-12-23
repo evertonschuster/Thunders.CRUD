@@ -17,9 +17,9 @@ namespace Thunders.CRUD.infrastructure
             return await _context.Set<T>().ToListAsync();
         }
 
-        public async Task AddAsync(T entity)
+        public void Add(T entity)
         {
-            await _context.Set<T>().AddAsync(entity);
+            _context.Set<T>().Add(entity);
         }
 
         public void Update(T entity)

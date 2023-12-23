@@ -13,7 +13,9 @@ namespace Thunders.CRUD.Domain.Test.Clients
             var email = new Email("test@example.com");
             var profession = "Developer";
 
+
             var client = Client.Create(name, email, profession);
+
 
             Assert.Equal(name, client.Name);
             Assert.Equal(email, client.Email);
@@ -38,7 +40,9 @@ namespace Thunders.CRUD.Domain.Test.Clients
             var newEmail = new Email("updated@example.com");
             var newProfession = "Updated Developer";
 
+
             client.Update(newEmail, newProfession);
+
 
             Assert.Equal(newEmail, client.Email);
             Assert.Equal(newProfession, client.Profession);
@@ -61,12 +65,13 @@ namespace Thunders.CRUD.Domain.Test.Clients
             var name = new Name("Valid Name");
             var email = new Email("test@example.com");
             var profession = "Developer";
-
             var client = Client.Create(name, email, profession);
+
+
             client.Delete();
 
-            Assert.NotNull(client.DeletedAt);
 
+            Assert.NotNull(client.DeletedAt);
             Assert.Collection(client.Events,
             @event =>
             {

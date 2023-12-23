@@ -27,5 +27,10 @@ namespace Thunders.CRUD.Domain.Clients.Models
         {
             return nome.ToString();
         }
+
+        public static implicit operator Name(string nome)
+        {
+            return new Name(nome);
+        }
     }
 }

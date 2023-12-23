@@ -14,5 +14,10 @@ namespace Thunders.CRUD.infrastructure.UnitOfWork
         {
             return _context.SaveChangesAsync();
         }
+
+        public int SaveChanges()
+        {
+            return _context.SaveChanges();
+        }
     }
 }

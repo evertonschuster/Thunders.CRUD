@@ -33,6 +33,7 @@ namespace Thunders.CRUD.Domain.Test.Clients
         public void Should_CreateEmail_When_ValidEmailIsProvided(string emailText)
         {
             var email = new Email(emailText);
+
             Assert.Equal(emailText, email.Value);
         }
     }

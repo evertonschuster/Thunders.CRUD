@@ -2,7 +2,7 @@
 {
     public class NameNullOrWhitespaceException : BusinessExeption
     {
-        public NameNullOrWhitespaceException(string property) : base("Nome cannot be null or whitespace.", property)
+        public NameNullOrWhitespaceException(string property) : base("Name cannot be null or whitespace.", property)
         {
         }
     }

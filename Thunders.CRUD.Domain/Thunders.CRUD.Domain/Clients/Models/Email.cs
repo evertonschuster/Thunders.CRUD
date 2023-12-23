@@ -38,5 +38,10 @@ namespace Thunders.CRUD.Domain.Clients
         {
             return email.ToString();
         }
+
+        public static implicit operator Email(string email)
+        {
+            return new Email(email);
+        }
     }
 }
