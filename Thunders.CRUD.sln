@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thunders.CRUD.Application",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thunders.CRUD.infrastructure", "Thunders.CRUD.infrastructure\Thunders.CRUD.infrastructure\Thunders.CRUD.infrastructure.csproj", "{A28D494B-CAB8-4D43-8BD5-7F8F3D16A931}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C6FF465E-257D-4F6E-B18E-094DC05EA912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Thunders.CRUD.Domain.Test", "Tests\Thunders.CRUD.Domain.Test\Thunders.CRUD.Domain.Test.csproj", "{E094FFE3-FA5E-4A05-8EEF-033537227687}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,16 @@ Global
 		{A28D494B-CAB8-4D43-8BD5-7F8F3D16A931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A28D494B-CAB8-4D43-8BD5-7F8F3D16A931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A28D494B-CAB8-4D43-8BD5-7F8F3D16A931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E094FFE3-FA5E-4A05-8EEF-033537227687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E094FFE3-FA5E-4A05-8EEF-033537227687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E094FFE3-FA5E-4A05-8EEF-033537227687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E094FFE3-FA5E-4A05-8EEF-033537227687}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E094FFE3-FA5E-4A05-8EEF-033537227687} = {C6FF465E-257D-4F6E-B18E-094DC05EA912}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB2F50A3-5295-49CA-B1C4-39B9F9D246B4}

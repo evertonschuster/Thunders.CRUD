@@ -2,13 +2,17 @@
 {
     public class Event
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; }
 
-        public DateTime Timestamp { get; private set; }
+        public DateTimeOffset Timestamp { get; }
 
-        protected Event()
+        public Guid AggregateId { get; }
+
+        protected Event(Guid aggregateId)
         {
-            Timestamp = DateTime.Now;
+            this.Id = Guid.NewGuid();
+            Timestamp = DateTimeOffset.Now;
+            AggregateId = aggregateId;
         }
     }
 }

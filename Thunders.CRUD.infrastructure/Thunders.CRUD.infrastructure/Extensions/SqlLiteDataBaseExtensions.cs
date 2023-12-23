@@ -23,7 +23,7 @@ namespace Thunders.CRUD.infrastructure.Extensions
                 options.UseSqlite(connectionString)
             );
 
-            services.AddScoped<IUnitOfWork, UnitOfWorkEfCore>();    
+            services.AddScoped<IUnitOfWork, UnitOfWorkEfCore>();
         }
     }
 }

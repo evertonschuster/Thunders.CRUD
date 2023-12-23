@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Thunders.CRUD.Domain.Clients;
+using Thunders.CRUD.Domain.Clients.Models;
 
 namespace Thunders.CRUD.infrastructure
 {

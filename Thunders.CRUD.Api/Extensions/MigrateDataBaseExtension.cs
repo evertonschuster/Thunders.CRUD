@@ -3,7 +3,7 @@ using Thunders.CRUD.infrastructure.Extensions;
 
 namespace Thunders.CRUD.Api.Extensions
 {
-     public static class MigrateDataBaseExtension
+    public static class MigrateDataBaseExtension
     {
         public static void MigrateApplicationDataBase(this IApplicationBuilder app)
         {
