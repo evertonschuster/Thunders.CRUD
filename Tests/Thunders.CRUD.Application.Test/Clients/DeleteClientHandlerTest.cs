@@ -23,7 +23,7 @@ namespace Thunders.CRUD.Application.Test.Clients
 
 
             clientRepository.Received(1).GetById(Arg.Any<Guid>());
-            clientRepository.Received(1).Delete(Arg.Any<Client>());
+            clientRepository.Received(1).Update(Arg.Any<Client>());
             unitOfWork.Received(1).SaveChanges();
         }
 
