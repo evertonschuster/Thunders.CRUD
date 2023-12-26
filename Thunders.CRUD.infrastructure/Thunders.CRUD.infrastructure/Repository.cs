@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Thunders.CRUD.Domain;
+using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.infrastructure
 {
@@ -7,12 +7,12 @@ namespace Thunders.CRUD.infrastructure
     {
         private readonly ThunderContext _context = context;
 
-        public async Task<T?> GetByIdAsync(int id)
+        public async Task<T?> GetByIdAsync(Guid id)
         {
             return await _context.Set<T>().FindAsync(id);
         }
 
-        public T? GetById(int id)
+        public T? GetById(Guid id)
         {
             return _context.Set<T>().Find(id);
         }

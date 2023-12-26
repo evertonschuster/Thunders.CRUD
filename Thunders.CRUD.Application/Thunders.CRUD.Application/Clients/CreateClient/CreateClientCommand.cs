@@ -18,11 +18,25 @@ namespace Thunders.CRUD.Application.Clients.CreateClient
             Profession = profession;
         }
 
+        /// <summary>
+        /// Name of the client
+        /// </summary>
+        /// <example>John Doe</example> 
         public string Name { get; set; }
 
+        /// <summary>
+        /// Email of the client
+        /// </summary>
+        /// <example>example@example.com</example>
         public string Email { get; set; }
 
+
+        /// <summary>
+        /// Profession of the client
+        /// </summary>
+        /// <example>Developer</example>
         public string Profession { get; set; }
+
 
         public Client ToModel()
         {

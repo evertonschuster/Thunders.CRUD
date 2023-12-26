@@ -1,5 +1,5 @@
-﻿using Thunders.CRUD.Domain;
-using Thunders.CRUD.Domain.Clients.Repository;
+﻿using Thunders.CRUD.Domain.Clients.Repositories;
+using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.Application.Clients.CreateClient
 {

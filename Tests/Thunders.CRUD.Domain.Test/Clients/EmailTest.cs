@@ -1,5 +1,5 @@
-﻿using Thunders.CRUD.Domain.Clients;
-using Thunders.CRUD.Domain.Clients.Exceptions;
+﻿using Thunders.CRUD.Domain.Clients.Exceptions;
+using Thunders.CRUD.Domain.Clients.Models;
 
 namespace Thunders.CRUD.Domain.Test.Clients
 {

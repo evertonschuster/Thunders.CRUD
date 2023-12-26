@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Thunders.CRUD.Domain
+namespace Thunders.CRUD.Domain.Commoms
 {
     public class Entity
     {
@@ -11,8 +12,10 @@ namespace Thunders.CRUD.Domain
         public DateTimeOffset? UpdatedAt { get; protected set; }
         public DateTimeOffset? DeletedAt { get; protected set; }
 
+        [NotMapped]
         private readonly List<Event> _events;
 
+        [NotMapped]
         public IReadOnlyCollection<Event> Events => _events.AsReadOnly();
 
         protected Entity()
@@ -30,11 +33,17 @@ namespace Thunders.CRUD.Domain
             _events = events ?? [];
         }
 
+        [NotMapped]
         public IReadOnlyCollection<Event> Notificacoes => _events.AsReadOnly();
 
         protected void AddEvent(Event @event)
         {
             _events.Add(@event);
+        }
+
+        public void ClearEvents()
+        {
+            _events.Clear();
         }
     }
 }

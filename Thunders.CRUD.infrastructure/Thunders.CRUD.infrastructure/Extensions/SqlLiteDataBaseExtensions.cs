@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Thunders.CRUD.Domain;
+using Thunders.CRUD.Domain.Commoms;
 using Thunders.CRUD.infrastructure.UnitOfWork;
 
 namespace Thunders.CRUD.infrastructure.Extensions

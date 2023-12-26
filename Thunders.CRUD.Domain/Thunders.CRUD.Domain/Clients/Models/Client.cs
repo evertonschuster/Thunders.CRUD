@@ -1,9 +1,14 @@
 ﻿using Thunders.CRUD.Domain.Clients.Events;
+using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.Domain.Clients.Models
 {
     public class Client : Entity, IAggregateRoot
     {
+        protected Client()
+        {
+        }
+
         public Client(Guid id, Name name, Email email, string profession) : base(id)
         {
             Name = name;

@@ -1,6 +1,7 @@
 ﻿using Thunders.CRUD.Domain.Clients.Models;
+using Thunders.CRUD.Domain.Commoms;
 
-namespace Thunders.CRUD.Domain.Clients.Repository
+namespace Thunders.CRUD.Domain.Clients.Repositories
 {
     public interface IClientRepository : IRepository
     {
@@ -9,7 +10,7 @@ namespace Thunders.CRUD.Domain.Clients.Repository
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Client GetById(Guid id);
+        Client? GetById(Guid id);
 
         /// <summary>
         /// Add or create Client in the repository

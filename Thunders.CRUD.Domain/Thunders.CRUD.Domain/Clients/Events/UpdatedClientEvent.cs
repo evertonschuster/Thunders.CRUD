@@ -1,9 +1,24 @@
-﻿namespace Thunders.CRUD.Domain.Clients.Events
-{
-    public class UpdatedClientEvent(Guid aggregateId, string email, string profession) : Event(aggregateId)
-    {
-        public string Email { get; } = email;
+﻿using Thunders.CRUD.Domain.Commoms;
 
-        public string Profession { get; } = profession;
+namespace Thunders.CRUD.Domain.Clients.Events
+{
+    public class UpdatedClientEvent : Event
+    {
+
+        protected UpdatedClientEvent()
+        {
+            Email = default!;
+            Profession = default!;
+        }
+
+        public UpdatedClientEvent(Guid aggregateId, string email, string profession) : base(aggregateId)
+        {
+            Email = email;
+            Profession = profession;
+        }
+
+        public string Email { get; }
+
+        public string Profession { get; }
     }
 }

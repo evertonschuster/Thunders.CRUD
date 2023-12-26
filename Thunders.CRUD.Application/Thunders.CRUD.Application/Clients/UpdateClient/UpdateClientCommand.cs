@@ -17,8 +17,18 @@
 
         public Guid Id { get; set; }
 
+
+        /// <summary>
+        /// Email of the client
+        /// </summary>
+        /// <example>example@example.com</example>
         public string Email { get; set; }
 
+
+        /// <summary>
+        /// Profession of the client
+        /// </summary>
+        /// <example>Developer</example>
         public string Profession { get; set; }
     }
 }

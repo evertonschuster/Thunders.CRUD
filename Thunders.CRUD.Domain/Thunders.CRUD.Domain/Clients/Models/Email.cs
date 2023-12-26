@@ -1,11 +1,16 @@
 ﻿using System.Text.RegularExpressions;
 using Thunders.CRUD.Domain.Clients.Exceptions;
 
-namespace Thunders.CRUD.Domain.Clients
+namespace Thunders.CRUD.Domain.Clients.Models
 {
     public partial record Email
     {
         private string _value;
+
+        protected Email()
+        {
+            _value = string.Empty;
+        }
 
         public Email(string email)
         {

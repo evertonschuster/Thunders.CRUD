@@ -6,6 +6,11 @@ namespace Thunders.CRUD.Domain.Clients.Models
     {
         private string _value;
 
+        protected Name()
+        {
+            _value = string.Empty;
+        }
+
         public Name(string name)
         {
             if (string.IsNullOrWhiteSpace(name))

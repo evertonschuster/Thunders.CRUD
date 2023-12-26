@@ -1,4 +1,4 @@
-﻿using Thunders.CRUD.Domain;
+﻿using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.infrastructure.UnitOfWork
 {

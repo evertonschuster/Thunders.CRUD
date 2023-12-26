@@ -1,4 +1,6 @@
-﻿namespace Thunders.CRUD.Domain.Clients.Exceptions
+﻿using Thunders.CRUD.Domain.Commoms;
+
+namespace Thunders.CRUD.Domain.Clients.Exceptions
 {
     public class NameNullOrWhitespaceException : BusinessExeption
     {

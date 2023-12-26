@@ -1,0 +1,17 @@
+﻿namespace Thunders.CRUD.Application.Clients.GetByIdClient
+{
+    public class GetByIdClientQuery : IRequest<GetByIdClientResult>
+    {
+        public GetByIdClientQuery()
+        {
+
+        }
+
+        public GetByIdClientQuery(Guid id)
+        {
+            Id = id;
+        }
+
+        public Guid Id { get; set; }
+    }
+}

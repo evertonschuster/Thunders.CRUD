@@ -1,11 +1,28 @@
-﻿namespace Thunders.CRUD.Domain.Clients.Events
+﻿using Thunders.CRUD.Domain.Commoms;
+
+namespace Thunders.CRUD.Domain.Clients.Events
 {
-    public class CreatedClientEvent(Guid aggregateId, string name, string email, string profession) : Event(aggregateId)
+    public class CreatedClientEvent : Event
     {
-        public string Name { get; } = name;
+        public CreatedClientEvent()
+        {
+            Name = default!;
+            Email = default!;
+            Profession = default!;
+        }
 
-        public string Email { get; } = email;
+        public CreatedClientEvent(Guid aggregateId, string name, string email, string profession) : base(aggregateId)
+        {
+            Name = name;
+            Email = email;
+            Profession = profession;
+        }
 
-        public string Profession { get; } = profession;
+
+        public string Name { get; }
+
+        public string Email { get; }
+
+        public string Profession { get; }
     }
 }

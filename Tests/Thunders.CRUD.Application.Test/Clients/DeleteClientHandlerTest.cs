@@ -1,8 +1,8 @@
 ﻿using Thunders.CRUD.Application.Clients.DeleteClient;
-using Thunders.CRUD.Domain;
 using Thunders.CRUD.Domain.Clients.Exceptions;
 using Thunders.CRUD.Domain.Clients.Models;
-using Thunders.CRUD.Domain.Clients.Repository;
+using Thunders.CRUD.Domain.Clients.Repositories;
+using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.Application.Test.Clients
 {
