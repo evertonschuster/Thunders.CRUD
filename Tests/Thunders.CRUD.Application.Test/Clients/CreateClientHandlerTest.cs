@@ -64,5 +64,40 @@ namespace Thunders.CRUD.Application.Test.Clients
 
             await act.Should().ThrowAsync<EmailNullOrWhitespaceException>();
         }
+
+        [Fact]
+        public async Task Should_ThrowOperationCanceled_When_CancellationTokenIsCancelled()
+        {
+            var clientRepository = Substitute.For<IClientRepository>();
+            var unitOfWork = Substitute.For<IUnitOfWork>();
+
+            var command = new CreateClientCommand("Valid Name", "test@example.com", "Developer");
+            var handler = new CreateClientHandler(clientRepository, unitOfWork);
+            var cancellationTokenSource = new CancellationTokenSource();
+            cancellationTokenSource.Cancel();
+
+
+            Func<Task> act = async () => await handler.Handle(command, cancellationTokenSource.Token);
+
+
+            await act.Should().ThrowAsync<OperationCanceledException>();
+            unitOfWork.DidNotReceive().SaveChanges();
+            await unitOfWork.DidNotReceive().SaveChangesAsync();
+        }
+
+        [Fact]
+        public void ToModel_Should_Return_Client_With_Same_Properties_As_Command()
+        {
+            var command = new CreateClientCommand("Test Name", "test@example.com", "Developer");
+
+
+            var model = command.ToModel();
+
+
+            model.Should().BeOfType<Client>();
+            model.Name.ToString().Should().Be(command.Name);
+            model.Email.ToString().Should().Be(command.Email);
+            model.Profession.Should().Be(command.Profession);
+        }
     }
 }

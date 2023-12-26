@@ -12,8 +12,8 @@ namespace Thunders.CRUD.Application.Test.Clients
         public async Task Should_DeleteClient_When_ValidCommandIsProvided()
         {
             var clientRepository = Substitute.For<IClientRepository>();
-            clientRepository.GetById(Arg.Any<Guid>()).Returns(new Client("Test", "Test@teste.com", "Test"));
             var unitOfWork = Substitute.For<IUnitOfWork>();
+            clientRepository.GetById(Arg.Any<Guid>()).Returns(new Client("Test", "Test@teste.com", "Test"));
 
             var command = new DeleteClientCommand(Guid.NewGuid());
             var handler = new DeleteClientHandler(clientRepository, unitOfWork);
@@ -47,6 +47,28 @@ namespace Thunders.CRUD.Application.Test.Clients
             clientRepository.Received(1).GetById(Arg.Any<Guid>());
             clientRepository.Received(0).Delete(Arg.Any<Client>());
             unitOfWork.Received(0).SaveChanges();
+        }
+
+
+        [Fact]
+        public async Task Should_ThrowOperationCanceled_When_CancellationTokenIsCancelled()
+        {
+            var clientRepository = Substitute.For<IClientRepository>();
+            var unitOfWork = Substitute.For<IUnitOfWork>();
+            clientRepository.GetById(Arg.Any<Guid>()).Returns(new Client("Test", "Test@teste.com", "Test"));
+
+            var command = new DeleteClientCommand(Guid.NewGuid());
+            var handler = new DeleteClientHandler(clientRepository, unitOfWork);
+            var cancellationTokenSource = new CancellationTokenSource();
+            cancellationTokenSource.Cancel();
+
+
+            Func<Task> act = async () => await handler.Handle(command, cancellationTokenSource.Token);
+
+
+            await act.Should().ThrowAsync<OperationCanceledException>();
+            unitOfWork.DidNotReceive().SaveChanges();
+            await unitOfWork.DidNotReceive().SaveChangesAsync();
         }
     }
 }

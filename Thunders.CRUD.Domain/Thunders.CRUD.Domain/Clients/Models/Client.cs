@@ -25,6 +25,11 @@ namespace Thunders.CRUD.Domain.Clients.Models
         public string Profession { get; private set; }
 
 
+        /// <summary>
+        /// Update the client's email and profession
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="profession"></param>
         public void Update(Email email, string profession)
         {
             Email = email;
@@ -35,6 +40,9 @@ namespace Thunders.CRUD.Domain.Clients.Models
             AddEvent(@event);
         }
 
+        /// <summary>
+        /// Delete the client
+        /// </summary>
         public void Delete()
         {
             DeletedAt = DateTime.UtcNow;
@@ -43,6 +51,13 @@ namespace Thunders.CRUD.Domain.Clients.Models
             AddEvent(@event);
         }
 
+        /// <summary>
+        /// factory for Create a new client
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="email"></param>
+        /// <param name="profession"></param>
+        /// <returns></returns>
         public static Client Create(Name name, Email email, string profession)
         {
             var model = new Client(name, email, profession);

@@ -24,7 +24,7 @@ namespace Thunders.CRUD.Application.Clients.CreateClient
 
         public string Profession { get; set; }
 
-        internal Client ToModel()
+        public Client ToModel()
         {
             return Client.Create(Name, Email, Profession);
         }
