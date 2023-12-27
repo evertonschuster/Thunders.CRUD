@@ -7,7 +7,7 @@ namespace Thunders.CRUD.Application.Test.Clients
     {
 
         [Fact]
-        public void Should_HaveError_When_EmailIsNull()
+        public void Handle_Should_HaveError_When_EmailIsNull()
         {
             var validator = new UpdateClientValidator();
             var comamnd = new UpdateClientCommand();
@@ -21,7 +21,7 @@ namespace Thunders.CRUD.Application.Test.Clients
 
 
         [Fact]
-        public void Should_NotHaveError_When_EmailIsNotNull()
+        public void Handle_Should_NotHaveError_When_EmailIsNotNull()
         {
             var validator = new UpdateClientValidator();
             var comamnd = new UpdateClientCommand(Guid.NewGuid(), "eveton.schuster@gmail.com", "Tester");
@@ -34,7 +34,7 @@ namespace Thunders.CRUD.Application.Test.Clients
         }
 
         [Fact]
-        public void Should_HaveError_When_ProfessionIsNull()
+        public void Handle_Should_HaveError_When_ProfessionIsNull()
         {
             var validator = new UpdateClientValidator();
             var comamnd = new UpdateClientCommand();
@@ -47,7 +47,7 @@ namespace Thunders.CRUD.Application.Test.Clients
         }
 
         [Fact]
-        public void Should_NotHaveError_When_ProfessionIsNotNull()
+        public void Handle_Should_NotHaveError_When_ProfessionIsNotNull()
         {
             var validator = new UpdateClientValidator();
             var comamnd = new UpdateClientCommand(Guid.NewGuid(), "eveton.schuster@gmail.com", "Tester");

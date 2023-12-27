@@ -6,7 +6,7 @@ namespace Thunders.CRUD.Application.Test.Clients
     public class CreateClientValidatorTest
     {
         [Fact]
-        public void Should_HaveError_When_NameIsNull()
+        public void Handle_Should_HaveError_When_NameIsNull()
         {
             var validator = new CreateClientValidator();
             var comamnd = new CreateClientCommand();

@@ -12,12 +12,12 @@ namespace Thunders.CRUD.Application.Clients.GetByIdClient
             Profession = model.Profession;
         }
 
-        public Guid Id { get; set; }
+        public Guid Id { get; }
 
-        public string Name { get; set; }
+        public string Name { get; }
 
-        public string Email { get; set; }
+        public string Email { get; }
 
-        public string Profession { get; set; }
+        public string Profession { get; }
     }
 }

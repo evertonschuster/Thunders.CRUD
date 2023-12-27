@@ -10,7 +10,7 @@ namespace Thunders.CRUD.Application.Test.Clients
     {
 
         [Fact]
-        public async Task Should_CreateClient_When_ValidCommandIsProvided()
+        public async Task Handle_ShouldCreateClient_When_ValidCommandIsProvided()
         {
             var clientRepository = Substitute.For<IClientRepository>();
             var unitOfWork = Substitute.For<IUnitOfWork>();
@@ -28,7 +28,7 @@ namespace Thunders.CRUD.Application.Test.Clients
         }
 
         [Fact]
-        public async Task Should_CreateClient_When_EmptyNameCommandIsProvided()
+        public async Task Handle_ShouldCreateClient_When_EmptyNameCommandIsProvided()
         {
             var clientRepository = Substitute.For<IClientRepository>();
             var unitOfWork = Substitute.For<IUnitOfWork>();
@@ -47,7 +47,7 @@ namespace Thunders.CRUD.Application.Test.Clients
         }
 
         [Fact]
-        public async Task Should_CreateClient_When_EmptyEmailCommandIsProvided()
+        public async Task Handle_ShouldCreateClient_When_EmptyEmailCommandIsProvided()
         {
             var clientRepository = Substitute.For<IClientRepository>();
             var unitOfWork = Substitute.For<IUnitOfWork>();
@@ -66,7 +66,7 @@ namespace Thunders.CRUD.Application.Test.Clients
         }
 
         [Fact]
-        public async Task Should_ThrowOperationCanceled_When_CancellationTokenIsCancelled()
+        public async Task Handle_ShouldThrowOperationCanceled_When_CancellationTokenIsCancelled()
         {
             var clientRepository = Substitute.For<IClientRepository>();
             var unitOfWork = Substitute.For<IUnitOfWork>();

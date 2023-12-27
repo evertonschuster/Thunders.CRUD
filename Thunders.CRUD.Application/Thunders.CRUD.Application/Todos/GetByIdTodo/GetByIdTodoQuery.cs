@@ -1,0 +1,16 @@
+﻿namespace Thunders.CRUD.Application.Todos.GetByIdTodo
+{
+    public class GetByIdTodoQuery : IRequest<GetByIdTodoResult>
+    {
+        public GetByIdTodoQuery()
+        {
+        }
+
+        public GetByIdTodoQuery(Guid id)
+        {
+            Id = id;
+        }
+
+        public Guid Id { get; }
+    }
+}

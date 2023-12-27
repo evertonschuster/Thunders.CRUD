@@ -9,7 +9,7 @@ namespace Thunders.CRUD.Application.Test.Clients
     public class DeleteClientHandlerTest
     {
         [Fact]
-        public async Task Should_DeleteClient_When_ValidCommandIsProvided()
+        public async Task Handle_ShouldDeleteClient_When_ValidCommandIsProvided()
         {
             var clientRepository = Substitute.For<IClientRepository>();
             var unitOfWork = Substitute.For<IUnitOfWork>();
@@ -28,7 +28,7 @@ namespace Thunders.CRUD.Application.Test.Clients
         }
 
         [Fact]
-        public async Task Should_ThrowException_When_ClientNotFound()
+        public async Task Handle_ShouldThrowException_When_ClientNotFound()
         {
             var clientRepository = Substitute.For<IClientRepository>();
             var unitOfWork = Substitute.For<IUnitOfWork>();
@@ -51,7 +51,7 @@ namespace Thunders.CRUD.Application.Test.Clients
 
 
         [Fact]
-        public async Task Should_ThrowOperationCanceled_When_CancellationTokenIsCancelled()
+        public async Task Handle_ShouldThrowOperationCanceled_When_CancellationTokenIsCancelled()
         {
             var clientRepository = Substitute.For<IClientRepository>();
             var unitOfWork = Substitute.For<IUnitOfWork>();

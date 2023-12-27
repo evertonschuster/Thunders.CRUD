@@ -36,7 +36,7 @@ namespace Thunders.CRUD.Application.Todos.CreateTodo
         /// <example>00000000-0000-0000-0000-000000000000</example>
         public Guid? ClientId { get; set; }
 
-        internal Todo ToModel()
+        public Todo ToModel()
         {
             return Todo.Create(Title, Description, ClientId);
         }
