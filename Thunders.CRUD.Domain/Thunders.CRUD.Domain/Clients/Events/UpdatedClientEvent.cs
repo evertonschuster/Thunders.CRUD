@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.Domain.Clients.Events
 {
-    public class UpdatedClientEvent : Event
+    public sealed class UpdatedClientEvent : Event
     {
 
         protected UpdatedClientEvent()

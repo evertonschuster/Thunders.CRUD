@@ -6,7 +6,7 @@ using Thunders.CRUD.Domain.Todos.Repositories;
 
 namespace Thunders.CRUD.Application.Test.Todos
 {
-    public class UpdateTodoHandlerTest
+    public sealed class UpdateTodoHandlerTest
     {
 
         [Fact]

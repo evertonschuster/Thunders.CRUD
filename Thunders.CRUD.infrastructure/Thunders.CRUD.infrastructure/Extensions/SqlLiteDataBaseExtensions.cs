@@ -19,7 +19,7 @@ namespace Thunders.CRUD.infrastructure.Extensions
             var dbPath = Path.Join(path, "Thunders.db");
             var connectionString = $"Data Source={dbPath}";
 
-            services.AddDbContext<ThunderContext>(options =>
+            services.AddDbContextPool<ThunderContext>(options =>
                 options.UseSqlite(connectionString)
             );
 

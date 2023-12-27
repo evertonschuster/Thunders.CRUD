@@ -3,7 +3,7 @@ using Thunders.CRUD.Domain.Clients.Repositories;
 
 namespace Thunders.CRUD.Application.Clients.GetByIdClient
 {
-    public class GetByIdClientHandler(IClientRepository clientRepository) : IRequestHandler<GetByIdClientQuery, GetByIdClientResult>
+    public sealed class GetByIdClientHandler(IClientRepository clientRepository) : IRequestHandler<GetByIdClientQuery, GetByIdClientResult>
     {
         private readonly IClientRepository clientRepository = clientRepository;
 

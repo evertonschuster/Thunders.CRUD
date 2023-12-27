@@ -1,6 +1,6 @@
 ﻿namespace Thunders.CRUD.Application.Clients.UpdateClient
 {
-    public class UpdateClientValidator : AbstractValidator<UpdateClientCommand>
+    public sealed class UpdateClientValidator : AbstractValidator<UpdateClientCommand>
     {
         public UpdateClientValidator()
         {

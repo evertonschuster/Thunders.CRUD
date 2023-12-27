@@ -3,7 +3,7 @@ using Thunders.CRUD.Domain.Todos.Repositories;
 
 namespace Thunders.CRUD.Application.Todos.GetByIdTodo
 {
-    public class GetByIdTodoHandler(ITodoRepository todoRepository) : IRequestHandler<GetByIdTodoQuery, GetByIdTodoResult>
+    public sealed class GetByIdTodoHandler(ITodoRepository todoRepository) : IRequestHandler<GetByIdTodoQuery, GetByIdTodoResult>
     {
         private readonly ITodoRepository todoRepository = todoRepository;
 

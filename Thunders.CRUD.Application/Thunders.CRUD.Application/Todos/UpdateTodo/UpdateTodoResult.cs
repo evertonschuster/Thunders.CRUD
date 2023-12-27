@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.Application.Todos.UpdateTodo
 {
-    public class UpdateTodoResult
+    public sealed class UpdateTodoResult
     {
         public UpdateTodoResult(Todo model)
         {

@@ -5,7 +5,7 @@ using Thunders.CRUD.infrastructure.Converters;
 
 namespace Thunders.CRUD.infrastructure
 {
-    public class ThunderContext : DbContext
+    public sealed class ThunderContext : DbContext
     {
         public DbSet<Client> Clients { get; set; }
         public DbSet<Todo> Todos { get; set; }

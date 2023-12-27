@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Thunders.CRUD.Application.Todos.UpdateTodo;
+﻿using Thunders.CRUD.Application.Todos.UpdateTodo;
 using Thunders.CRUD.Domain.Clients.Models;
 using Thunders.CRUD.Domain.Clients.Repositories;
 
 namespace Thunders.CRUD.Application.Test.Todos
 {
-    public class UpdateTodoValidatorTest
+    public sealed class UpdateTodoValidatorTest
     {
         [Fact]
         public void Validate_ShouldReturnTrue_WhenTitleAndDescriptionAreNotEmptyAndClientExists()

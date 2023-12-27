@@ -5,7 +5,7 @@ using Thunders.CRUD.Domain.Clients.Repositories;
 
 namespace Thunders.CRUD.Application.Test.Clients
 {
-    public class GetByIdClientHandlerTest
+    public sealed class GetByIdClientHandlerTest
     {
         [Fact]
         public async Task Handle_Should_Return_GetByIdClientResult_When_Client_Exists()

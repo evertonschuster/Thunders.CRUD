@@ -3,7 +3,7 @@ using Thunders.CRUD.Domain.Clients.Models;
 
 namespace Thunders.CRUD.Domain.Test.Clients
 {
-    public class NameTest
+    public sealed class NameTest
     {
         [Fact]
         public void Should_ThrowException_When_NameIsNull()

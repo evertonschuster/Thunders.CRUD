@@ -4,7 +4,7 @@ using Thunders.CRUD.Domain.Clients.Repositories;
 
 namespace Thunders.CRUD.Application.Test.Todos
 {
-    public class CreateTodoValidatorTest
+    public sealed class CreateTodoValidatorTest
     {
         [Fact]
         public void Validate_ShouldReturnTrue_WhenTitleAndDescriptionAreNotEmptyAndClientExists()
@@ -52,7 +52,7 @@ namespace Thunders.CRUD.Application.Test.Todos
 
             var result = validator.Validate(command);
 
-            
+
             result.IsValid.Should().BeTrue();
         }
 
@@ -67,10 +67,10 @@ namespace Thunders.CRUD.Application.Test.Todos
 
             var command = new CreateTodoCommand(new string('a', 101), new string('a', 101), client.Id);
 
-            
+
             var result = validator.Validate(command);
 
-            
+
             result.IsValid.Should().BeFalse();
         }
     }

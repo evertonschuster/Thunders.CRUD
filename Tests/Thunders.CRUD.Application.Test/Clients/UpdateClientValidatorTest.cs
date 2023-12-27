@@ -3,7 +3,7 @@ using Thunders.CRUD.Application.Clients.UpdateClient;
 
 namespace Thunders.CRUD.Application.Test.Clients
 {
-    public class UpdateClientValidatorTest
+    public sealed class UpdateClientValidatorTest
     {
 
         [Fact]

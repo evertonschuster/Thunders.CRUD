@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.Domain.Todos.Events
 {
-    public class UpdatedTodoEvent : Event
+    public sealed class UpdatedTodoEvent : Event
     {
         public UpdatedTodoEvent(Guid aggregateId, string title, string description, Guid? clientId) : base(aggregateId)
         {

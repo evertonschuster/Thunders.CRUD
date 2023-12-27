@@ -4,7 +4,7 @@ using Thunders.CRUD.Domain.Todos.Repositories;
 
 namespace Thunders.CRUD.Application.Todos.UpdateTodo
 {
-    public class UpdateTodoHandler(ITodoRepository todoRepository, IUnitOfWork unitOfWork) : IRequestHandler<UpdateTodoCommand, UpdateTodoResult>
+    public sealed class UpdateTodoHandler(ITodoRepository todoRepository, IUnitOfWork unitOfWork) : IRequestHandler<UpdateTodoCommand, UpdateTodoResult>
     {
         private readonly ITodoRepository todoRepository = todoRepository;
         private readonly IUnitOfWork unitOfWork = unitOfWork;

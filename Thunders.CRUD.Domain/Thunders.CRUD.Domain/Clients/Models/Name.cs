@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.Domain.Clients.Models
 {
-    public record Name
+    public sealed record Name
     {
         private string _value;
 

@@ -1,6 +1,6 @@
 ﻿namespace Thunders.CRUD.Application.Todos.CompleteTodo
 {
-    public class CompleteTodoCommand : IRequest
+    public sealed class CompleteTodoCommand : IRequest
     {
         public CompleteTodoCommand()
         {

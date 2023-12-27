@@ -6,7 +6,7 @@ using Thunders.CRUD.Domain.Todos.Repositories;
 
 namespace Thunders.CRUD.Application.Test.Todos
 {
-    public class IncompleteTodoHandlerTest
+    public sealed class IncompleteTodoHandlerTest
     {
         [Fact]
         public async Task Handle_Should_Mark_Todo_As_Incomplete_When_Todo_Exists()

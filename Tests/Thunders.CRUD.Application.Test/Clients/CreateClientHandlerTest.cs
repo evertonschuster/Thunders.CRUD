@@ -6,7 +6,7 @@ using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.Application.Test.Clients
 {
-    public class CreateClientHandlerTest
+    public sealed class CreateClientHandlerTest
     {
 
         [Fact]

@@ -4,7 +4,7 @@ using Thunders.CRUD.Domain.Todos.Exceptions;
 
 namespace Thunders.CRUD.Domain.Todos.Models
 {
-    public class Todo : Entity, IAggregateRoot
+    public sealed class Todo : Entity, IAggregateRoot
     {
         protected Todo()
         {

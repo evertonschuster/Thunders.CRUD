@@ -1,6 +1,6 @@
 ﻿namespace Thunders.CRUD.Application.Todos.ListAllTodo
 {
-    public class ListAllTodoQuery : IRequest<List<ListAllTodoResult>>
+    public sealed class ListAllTodoQuery : IRequest<List<ListAllTodoResult>>
     {
     }
 }

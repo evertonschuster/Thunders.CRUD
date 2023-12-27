@@ -22,6 +22,8 @@ namespace Thunders.CRUD.Application.Extensions
             services.AddScoped<IRequestHandler<DeleteClientCommand>, DeleteClientHandler>();
             services.AddScoped<IRequestHandler<GetByIdClientQuery, GetByIdClientResult>, GetByIdClientHandler>();
             services.AddScoped<IRequestHandler<UpdateClientCommand, UpdateClientResult>, UpdateClientHandler>();
+            services.AddScoped<IValidator<CreateClientCommand>, CreateClientValidator>();
+            services.AddScoped<IValidator<UpdateClientCommand>, UpdateClientValidator>();
 
             services.AddScoped<IRequestHandler<CloseTodoCommand>, CloseTodoHandler>();
             services.AddScoped<IRequestHandler<CompleteTodoCommand>, CompleteTodoHandler>();
@@ -31,6 +33,8 @@ namespace Thunders.CRUD.Application.Extensions
             services.AddScoped<IRequestHandler<ListAllTodoQuery, List<ListAllTodoResult>>, ListAllTodoHandler>();
             services.AddScoped<IRequestHandler<UpdateTodoCommand, UpdateTodoResult>, UpdateTodoHandler>();
             services.AddScoped<IRequestHandler<IncompleteTodoCommand>, IncompleteTodoHandler>();
+            services.AddScoped<IValidator<CreateTodoCommand>, CreateTodoValidator>();
+            services.AddScoped<IValidator<UpdateTodoCommand>, UpdateTodoValidator>();
         }
     }
 }

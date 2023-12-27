@@ -4,7 +4,7 @@ using Thunders.CRUD.Domain.Todos.Models;
 
 namespace Thunders.CRUD.Domain.Test.Todos
 {
-    public class TodoTest
+    public sealed class TodoTest
     {
         [Fact]
         public void Todo_ShouldSet_Properties()

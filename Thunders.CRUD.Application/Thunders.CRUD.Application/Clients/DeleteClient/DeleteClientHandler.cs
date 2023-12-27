@@ -4,7 +4,7 @@ using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.Application.Clients.DeleteClient
 {
-    public class DeleteClientHandler(IClientRepository clientRepository, IUnitOfWork unitOfWork) : IRequestHandler<DeleteClientCommand>
+    public sealed class DeleteClientHandler(IClientRepository clientRepository, IUnitOfWork unitOfWork) : IRequestHandler<DeleteClientCommand>
     {
         private readonly IClientRepository clientRepository = clientRepository;
         private readonly IUnitOfWork unitOfWork = unitOfWork;

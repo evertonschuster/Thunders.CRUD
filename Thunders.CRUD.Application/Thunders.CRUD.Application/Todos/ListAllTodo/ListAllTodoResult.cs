@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.Application.Todos.ListAllTodo
 {
-    public class ListAllTodoResult
+    public sealed class ListAllTodoResult
     {
         public ListAllTodoResult(Todo model)
         {

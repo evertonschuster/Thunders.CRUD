@@ -3,7 +3,7 @@ using Thunders.CRUD.Domain.Todos.Repositories;
 
 namespace Thunders.CRUD.Application.Todos.CreateTodo
 {
-    public class CreateTodoHandler(ITodoRepository todoRepository, IUnitOfWork unitOfWork) : IRequestHandler<CreateTodoCommand, CreateTodoResult>
+    public sealed class CreateTodoHandler(ITodoRepository todoRepository, IUnitOfWork unitOfWork) : IRequestHandler<CreateTodoCommand, CreateTodoResult>
     {
         private readonly ITodoRepository todoRepository = todoRepository;
         private readonly IUnitOfWork unitOfWork = unitOfWork;

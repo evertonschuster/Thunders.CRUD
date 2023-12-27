@@ -1,6 +1,6 @@
 ﻿namespace Thunders.CRUD.Application.Todos.CreateTodo
 {
-    public class CreateTodoResult
+    public sealed class CreateTodoResult
     {
         public CreateTodoResult(Guid id)
         {

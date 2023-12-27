@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.Application.Todos.CreateTodo
 {
-    public class CreateTodoCommand : IRequest<CreateTodoResult>
+    public sealed class CreateTodoCommand : IRequest<CreateTodoResult>
     {
         public CreateTodoCommand()
         {

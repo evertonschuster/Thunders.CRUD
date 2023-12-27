@@ -3,7 +3,7 @@ using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.Domain.Clients.Models
 {
-    public class Client : Entity, IAggregateRoot
+    public sealed class Client : Entity, IAggregateRoot
     {
         protected Client()
         {

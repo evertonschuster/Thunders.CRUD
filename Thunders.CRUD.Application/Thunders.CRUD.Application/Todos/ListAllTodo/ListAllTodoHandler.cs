@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.Application.Todos.ListAllTodo
 {
-    public class ListAllTodoHandler(ITodoRepository todoRepository) : IRequestHandler<ListAllTodoQuery, List<ListAllTodoResult>>
+    public sealed class ListAllTodoHandler(ITodoRepository todoRepository) : IRequestHandler<ListAllTodoQuery, List<ListAllTodoResult>>
     {
         private readonly ITodoRepository todoRepository = todoRepository;
 

@@ -4,7 +4,7 @@ using Thunders.CRUD.Domain.Todos.Repositories;
 
 namespace Thunders.CRUD.Application.Test.Todos
 {
-    public class ListAllTodoHandlerTest
+    public sealed class ListAllTodoHandlerTest
     {
         [Fact]
         public async Task Handle_ShouldReturnAllTodos()

@@ -1,5 +1,7 @@
-using System.Reflection;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Diagnostics;
 using Thunders.CRUD.Api.Extensions;
+using Thunders.CRUD.Api.Handler;
 using Thunders.CRUD.Application.Extensions;
 using Thunders.CRUD.infrastructure.Extensions;
 
@@ -11,19 +13,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    // Set the comments path for the Swagger JSON and UI.
-    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-
-    c.IncludeXmlComments($@"{AppDomain.CurrentDomain.BaseDirectory}\PublicApi.xml");
-    c.IncludeXmlComments($@"{AppDomain.CurrentDomain.BaseDirectory}\PublicApplication.xml");
-});
+//builder.Services.AddExceptionHandler<ExceptionHandler>();
+builder.Services.AddTransient<IExceptionHandler, ExceptionHandler>();
+builder.Services.AddSwaggerGenApi();
 builder.Services.AddApplicationMediator<Program>();
 builder.Services.AddApplicationInjection();
 builder.Services.AddInfraInjection();
 builder.Services.AddLocalApplicationContext();
+builder.Services.AddFluentValidationAutoValidation();
 
 var app = builder.Build();
 app.MigrateApplicationDataBase();
@@ -33,12 +30,11 @@ app.MigrateApplicationDataBase();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUIApi();
 }
 
+app.UseExceptionHandlerApp();
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();

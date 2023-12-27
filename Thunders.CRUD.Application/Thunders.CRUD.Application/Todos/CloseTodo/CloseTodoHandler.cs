@@ -4,7 +4,7 @@ using Thunders.CRUD.Domain.Todos.Repositories;
 
 namespace Thunders.CRUD.Application.Todos.CloseTodo
 {
-    public class CloseTodoHandler(ITodoRepository todoRepository, IUnitOfWork unitOfWork) : IRequestHandler<CloseTodoCommand>
+    public sealed class CloseTodoHandler(ITodoRepository todoRepository, IUnitOfWork unitOfWork) : IRequestHandler<CloseTodoCommand>
     {
         private readonly ITodoRepository todoRepository = todoRepository;
         private readonly IUnitOfWork unitOfWork = unitOfWork;

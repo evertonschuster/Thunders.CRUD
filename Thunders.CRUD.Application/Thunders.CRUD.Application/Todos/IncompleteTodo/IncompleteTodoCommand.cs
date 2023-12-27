@@ -1,6 +1,6 @@
 ﻿namespace Thunders.CRUD.Application.Todos.IncompleteTodo
 {
-    public class IncompleteTodoCommand : IRequest
+    public sealed class IncompleteTodoCommand : IRequest
     {
         public IncompleteTodoCommand()
         {

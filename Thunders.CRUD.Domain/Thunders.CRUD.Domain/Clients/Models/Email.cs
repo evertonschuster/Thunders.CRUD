@@ -3,7 +3,7 @@ using Thunders.CRUD.Domain.Clients.Exceptions;
 
 namespace Thunders.CRUD.Domain.Clients.Models
 {
-    public partial record Email
+    public sealed partial record Email
     {
         private string _value;
 

@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.Application.Todos.CreateTodo
 {
-    public class CreateTodoValidator : AbstractValidator<CreateTodoCommand>
+    public sealed class CreateTodoValidator : AbstractValidator<CreateTodoCommand>
     {
         private readonly IClientRepository clientRepository;
 
@@ -13,12 +13,12 @@ namespace Thunders.CRUD.Application.Todos.CreateTodo
             RuleFor(x => x.Title)
                 .NotEmpty()
                 .NotNull().WithMessage("Title cannot be null or whitespace")
-                .MaximumLength(100).WithMessage("Title cannot be greater than {MinLength} characters");
+                .MaximumLength(100).WithMessage("Title cannot be greater than {MaxLength} characters");
 
             RuleFor(x => x.Description)
                 .NotEmpty()
                 .NotNull().WithMessage("Description cannot be null or whitespace")
-                .MaximumLength(100).WithMessage("Description cannot be greater than {MinLength} characters");
+                .MaximumLength(100).WithMessage("Description cannot be greater than {MaxLength} characters");
 
             RuleFor(x => x.ClientId)
                 .Must(ClientExists).WithMessage("Must informa a valid client");

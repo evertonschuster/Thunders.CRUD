@@ -6,7 +6,7 @@ using Thunders.CRUD.Domain.Todos.Repositories;
 
 namespace Thunders.CRUD.Application.Test.Todos
 {
-    public class CloseTodoHandlerTests
+    public sealed class CloseTodoHandlerTests
     {
         [Fact]
         public async Task Handle_ShouldCloseTodo_WhenTodoExists()

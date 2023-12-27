@@ -4,7 +4,7 @@ using Thunders.CRUD.Domain.Todos.Repositories;
 
 namespace Thunders.CRUD.Application.Todos.IncompleteTodo
 {
-    public class IncompleteTodoHandler(ITodoRepository todoRepository, IUnitOfWork unitOfWork) : IRequestHandler<IncompleteTodoCommand>
+    public sealed class IncompleteTodoHandler(ITodoRepository todoRepository, IUnitOfWork unitOfWork) : IRequestHandler<IncompleteTodoCommand>
     {
         private readonly ITodoRepository todoRepository = todoRepository;
         private readonly IUnitOfWork unitOfWork = unitOfWork;

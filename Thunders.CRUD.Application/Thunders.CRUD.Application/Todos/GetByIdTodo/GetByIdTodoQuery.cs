@@ -1,6 +1,6 @@
 ﻿namespace Thunders.CRUD.Application.Todos.GetByIdTodo
 {
-    public class GetByIdTodoQuery : IRequest<GetByIdTodoResult>
+    public sealed class GetByIdTodoQuery : IRequest<GetByIdTodoResult>
     {
         public GetByIdTodoQuery()
         {

@@ -6,7 +6,7 @@ using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.Application.Test.Clients
 {
-    public class DeleteClientHandlerTest
+    public sealed class DeleteClientHandlerTest
     {
         [Fact]
         public async Task Handle_ShouldDeleteClient_When_ValidCommandIsProvided()

@@ -1,6 +1,6 @@
 ﻿namespace Thunders.CRUD.Application.Todos.UpdateTodo
 {
-    public class UpdateTodoCommand : IRequest<UpdateTodoResult>
+    public sealed class UpdateTodoCommand : IRequest<UpdateTodoResult>
     {
         public UpdateTodoCommand()
         {

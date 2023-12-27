@@ -7,7 +7,7 @@ using Thunders.CRUD.Domain.Todos.Repositories;
 
 namespace Thunders.CRUD.Application.Test.Todos
 {
-    public class DeleteTodoHandlerTest
+    public sealed class DeleteTodoHandlerTest
     {
         [Fact]
         public async Task Handle_Should_Delete_Todo_When_Todo_Exists()

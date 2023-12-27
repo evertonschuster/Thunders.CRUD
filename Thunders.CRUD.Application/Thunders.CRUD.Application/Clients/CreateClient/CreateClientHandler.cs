@@ -3,7 +3,7 @@ using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.Application.Clients.CreateClient
 {
-    public class CreateClientHandler(IClientRepository clientRepository, IUnitOfWork unitOfWork) : IRequestHandler<CreateClientCommand, CreateClientResult>
+    public sealed class CreateClientHandler(IClientRepository clientRepository, IUnitOfWork unitOfWork) : IRequestHandler<CreateClientCommand, CreateClientResult>
     {
         private readonly IClientRepository clientRepository = clientRepository;
         private readonly IUnitOfWork unitOfWork = unitOfWork;

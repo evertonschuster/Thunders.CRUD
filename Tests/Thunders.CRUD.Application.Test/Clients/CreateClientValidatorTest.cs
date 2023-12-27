@@ -3,7 +3,7 @@ using Thunders.CRUD.Application.Clients.CreateClient;
 
 namespace Thunders.CRUD.Application.Test.Clients
 {
-    public class CreateClientValidatorTest
+    public sealed class CreateClientValidatorTest
     {
         [Fact]
         public void Handle_Should_HaveError_When_NameIsNull()

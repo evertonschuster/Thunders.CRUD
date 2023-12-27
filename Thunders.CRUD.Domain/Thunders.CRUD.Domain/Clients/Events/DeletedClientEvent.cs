@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.Domain.Clients.Events
 {
-    public class DeletedClientEvent : Event
+    public sealed class DeletedClientEvent : Event
     {
         protected DeletedClientEvent()
         {

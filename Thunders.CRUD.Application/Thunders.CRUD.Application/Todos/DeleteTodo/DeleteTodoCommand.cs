@@ -1,6 +1,6 @@
 ﻿namespace Thunders.CRUD.Application.Todos.DeleteTodo
 {
-    public class DeleteTodoCommand : IRequest
+    public sealed class DeleteTodoCommand : IRequest
     {
         public DeleteTodoCommand()
         {

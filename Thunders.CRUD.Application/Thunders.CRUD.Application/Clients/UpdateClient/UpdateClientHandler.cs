@@ -4,7 +4,7 @@ using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.Application.Clients.UpdateClient
 {
-    public class UpdateClientHandler(IClientRepository clientRepository, IUnitOfWork unitOfWork) : IRequestHandler<UpdateClientCommand, UpdateClientResult>
+    public sealed class UpdateClientHandler(IClientRepository clientRepository, IUnitOfWork unitOfWork) : IRequestHandler<UpdateClientCommand, UpdateClientResult>
     {
         private readonly IClientRepository clientRepository = clientRepository;
         private readonly IUnitOfWork unitOfWork = unitOfWork;

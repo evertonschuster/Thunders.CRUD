@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.Domain.Clients.Events
 {
-    public class CreatedClientEvent : Event
+    public sealed class CreatedClientEvent : Event
     {
         public CreatedClientEvent()
         {

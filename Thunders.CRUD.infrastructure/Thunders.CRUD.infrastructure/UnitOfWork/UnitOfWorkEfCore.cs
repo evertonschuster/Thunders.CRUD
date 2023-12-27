@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.infrastructure.UnitOfWork
 {
-    internal class UnitOfWorkEfCore(ThunderContext context) : IUnitOfWork
+    internal sealed class UnitOfWorkEfCore(ThunderContext context) : IUnitOfWork
     {
         private readonly ThunderContext _context = context;
 

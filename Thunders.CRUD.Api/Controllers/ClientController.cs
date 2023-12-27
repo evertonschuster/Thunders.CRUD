@@ -9,7 +9,7 @@ namespace Thunders.CRUD.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ClientController(IMediator mediator) : ControllerBase
+    public sealed class ClientController(IMediator mediator) : ControllerBase
     {
         public IMediator Mediator { get; set; } = mediator;
 

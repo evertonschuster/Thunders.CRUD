@@ -3,7 +3,7 @@ using Thunders.CRUD.Domain.Clients.Models;
 
 namespace Thunders.CRUD.Domain.Test.Clients
 {
-    public class ClientTest
+    public sealed class ClientTest
     {
         [Fact]
         public void Should_CreateClient_When_ValidDataIsProvided()

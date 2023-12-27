@@ -4,7 +4,7 @@ using Thunders.CRUD.Domain.Todos.Repositories;
 
 namespace Thunders.CRUD.Application.Todos.DeleteTodo
 {
-    public class DeleteTodoHandler(ITodoRepository todoRepository, IUnitOfWork unitOfWork) : IRequestHandler<DeleteTodoCommand>
+    public sealed class DeleteTodoHandler(ITodoRepository todoRepository, IUnitOfWork unitOfWork) : IRequestHandler<DeleteTodoCommand>
     {
         private readonly ITodoRepository todoRepository = todoRepository;
         private readonly IUnitOfWork unitOfWork = unitOfWork;

@@ -3,7 +3,7 @@ using Thunders.CRUD.Domain.Clients.Models;
 
 namespace Thunders.CRUD.Domain.Test.Clients
 {
-    public class EmailTest
+    public sealed class EmailTest
     {
         [Fact]
         public void Should_ThrowException_When_EmailIsNull()

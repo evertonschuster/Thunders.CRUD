@@ -6,7 +6,7 @@ using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.Application.Test.Clients
 {
-    public class UpdateClientHandlerTest
+    public sealed class UpdateClientHandlerTest
     {
         [Fact]
         public async Task Handle_Should_UpdateClient_When_ValidCommandIsProvided()

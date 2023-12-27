@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.Application.Clients.GetByIdClient
 {
-    public class GetByIdClientResult
+    public sealed class GetByIdClientResult
     {
         public GetByIdClientResult(Client model)
         {

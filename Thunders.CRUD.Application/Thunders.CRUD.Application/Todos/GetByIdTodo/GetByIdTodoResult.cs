@@ -2,7 +2,7 @@
 
 namespace Thunders.CRUD.Application.Todos.GetByIdTodo
 {
-    public class GetByIdTodoResult
+    public sealed class GetByIdTodoResult
     {
         public GetByIdTodoResult(Todo model)
         {

@@ -3,7 +3,7 @@ using Thunders.CRUD.Domain.Clients.Repositories;
 
 namespace Thunders.CRUD.infrastructure.Clients
 {
-    internal class ClientRepository(ThunderContext context) : Repository<Client>(context), IClientRepository
+    internal sealed class ClientRepository(ThunderContext context) : Repository<Client>(context), IClientRepository
     {
     }
 }
