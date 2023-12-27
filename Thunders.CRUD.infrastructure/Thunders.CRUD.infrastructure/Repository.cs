@@ -7,19 +7,14 @@ namespace Thunders.CRUD.infrastructure
     {
         private readonly ThunderContext _context = context;
 
-        public async Task<T?> GetByIdAsync(Guid id)
-        {
-            return await _context.Set<T>().FindAsync(id);
-        }
-
         public T? GetById(Guid id)
         {
             return _context.Set<T>().Find(id);
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public IEnumerable<T> GetAll()
         {
-            return await _context.Set<T>().ToListAsync();
+            return _context.Set<T>().AsNoTracking();
         }
 
         public void Add(T entity)

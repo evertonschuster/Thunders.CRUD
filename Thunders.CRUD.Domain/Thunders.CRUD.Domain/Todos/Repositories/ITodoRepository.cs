@@ -8,9 +8,15 @@ namespace Thunders.CRUD.Domain.Todos.Repositories
         /// <summary>
         /// Get Todo by Id in the repository
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">Todo Id</param>
+        /// <returns>Return a Todo when found</returns>
         Todo? GetById(Guid id);
+
+        /// <summary>
+        /// Get all Todos in the repository
+        /// </summary>
+        /// <returns>Return IEnumerable with Todos</returns>
+        IEnumerable<Todo> GetAll();
 
         /// <summary>
         /// Add or create Todo in the repository
@@ -30,5 +36,6 @@ namespace Thunders.CRUD.Domain.Todos.Repositories
         /// </summary>
         /// <param name="model"></param>
         void Delete(Todo model);
+
     }
 }

@@ -13,7 +13,8 @@ namespace Thunders.CRUD.Application.Test.Clients
         {
             var clientRepository = Substitute.For<IClientRepository>();
             var unitOfWork = Substitute.For<IUnitOfWork>();
-            clientRepository.GetById(Arg.Any<Guid>()).Returns(new Client("Test", "Test@teste.com", "Test"));
+            var client = new Client("Test", "Test@teste.com", "Test");
+            clientRepository.GetById(Arg.Any<Guid>()).Returns(client);
 
             var command = new DeleteClientCommand(Guid.NewGuid());
             var handler = new DeleteClientHandler(clientRepository, unitOfWork);
@@ -55,7 +56,8 @@ namespace Thunders.CRUD.Application.Test.Clients
         {
             var clientRepository = Substitute.For<IClientRepository>();
             var unitOfWork = Substitute.For<IUnitOfWork>();
-            clientRepository.GetById(Arg.Any<Guid>()).Returns(new Client("Test", "Test@teste.com", "Test"));
+            var client = new Client("Test", "Test@teste.com", "Test");
+            clientRepository.GetById(Arg.Any<Guid>()).Returns(client);
 
             var command = new DeleteClientCommand(Guid.NewGuid());
             var handler = new DeleteClientHandler(clientRepository, unitOfWork);

@@ -6,18 +6,18 @@
         {
             RuleFor(x => x.Name)
                 .NotEmpty()
-                .NotNull()
-                .WithMessage("Name cannot be null or whitespace");
+                .NotNull().WithMessage("Name cannot be null or whitespace")
+                .MaximumLength(100).WithMessage("Name cannot be greater than {MinLength} characters");
 
             RuleFor(x => x.Email)
                 .NotEmpty()
-                .NotNull()
-                .WithMessage("Email cannot be null or whitespace");
+                .NotNull().WithMessage("Email cannot be null or whitespace")
+                .MaximumLength(100).WithMessage("Email cannot be greater than {MinLength} characters");
 
             RuleFor(x => x.Profession)
                 .NotEmpty()
-                .NotNull()
-                .WithMessage("Profession cannot be null or whitespace");
+                .NotNull().WithMessage("Profession cannot be null or whitespace")
+                .MaximumLength(100).WithMessage("Profession cannot be greater than {MinLength} characters");
         }
     }
 }

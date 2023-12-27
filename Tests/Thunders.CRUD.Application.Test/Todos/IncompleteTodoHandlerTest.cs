@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using Thunders.CRUD.Application.Todos.CompleteTodo;
-using Thunders.CRUD.Application.Todos.IncompleteTodo;
+﻿using Thunders.CRUD.Application.Todos.IncompleteTodo;
 using Thunders.CRUD.Domain.Commoms;
 using Thunders.CRUD.Domain.Todos.Exceptions;
 using Thunders.CRUD.Domain.Todos.Models;
@@ -53,7 +46,8 @@ namespace Thunders.CRUD.Application.Test.Todos
         {
             var todoRepository = Substitute.For<ITodoRepository>();
             var unitOfWork = Substitute.For<IUnitOfWork>();
-            todoRepository.GetById(Arg.Any<Guid>()).Returns(Todo.Create("Test Todo", "Test Description", Guid.NewGuid()));
+            var todo = Todo.Create("Test Todo", "Test Description", Guid.NewGuid());
+            todoRepository.GetById(Arg.Any<Guid>()).Returns(todo);
 
             var handler = new IncompleteTodoHandler(todoRepository, unitOfWork);
             var command = new IncompleteTodoCommand(Guid.NewGuid());

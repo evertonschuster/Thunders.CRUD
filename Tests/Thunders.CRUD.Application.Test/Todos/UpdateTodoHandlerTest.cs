@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Thunders.CRUD.Application.Todos.UpdateTodo;
+﻿using Thunders.CRUD.Application.Todos.UpdateTodo;
+using Thunders.CRUD.Domain.Commoms;
 using Thunders.CRUD.Domain.Todos.Exceptions;
 using Thunders.CRUD.Domain.Todos.Models;
 using Thunders.CRUD.Domain.Todos.Repositories;
-using Thunders.CRUD.Domain.Commoms;
 
 namespace Thunders.CRUD.Application.Test.Todos
 {
@@ -26,7 +21,6 @@ namespace Thunders.CRUD.Application.Test.Todos
 
             todoRepository.GetById(command.Id).Returns(todo);
             var result = await handler.Handle(command, CancellationToken.None);
-
 
 
             todoRepository.Received(1).GetById(command.Id);

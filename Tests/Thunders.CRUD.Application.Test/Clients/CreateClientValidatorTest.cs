@@ -82,5 +82,31 @@ namespace Thunders.CRUD.Application.Test.Clients
 
             result.ShouldNotHaveValidationErrorFor(x => x.Profession);
         }
+
+        [Fact]
+        public void Validate_ShouldReturnTrue_WhenNameEmailAndProfessionAreUnderMaxLength()
+        {
+            var validator = new CreateClientValidator();
+            var command = new CreateClientCommand(new string('a', 100), new string('a', 40) + "@test.com", new string('a', 100));
+
+
+            var result = validator.Validate(command);
+
+
+            result.IsValid.Should().BeTrue();
+        }
+
+        [Fact]
+        public void Validate_ShouldReturnFalse_WhenNameEmailOrProfessionExceedsMaxLength()
+        {
+            var validator = new CreateClientValidator();
+            var command = new CreateClientCommand(new string('a', 101), new string('a', 101) + "@test.com", new string('a', 101));
+
+
+            var result = validator.Validate(command);
+
+
+            result.IsValid.Should().BeFalse();
+        }
     }
 }

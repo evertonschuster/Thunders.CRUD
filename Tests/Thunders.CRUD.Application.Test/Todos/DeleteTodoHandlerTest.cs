@@ -50,7 +50,8 @@ namespace Thunders.CRUD.Application.Test.Todos
         {
             var todoRepository = Substitute.For<ITodoRepository>();
             var unitOfWork = Substitute.For<IUnitOfWork>();
-            todoRepository.GetById(Arg.Any<Guid>()).Returns(Todo.Create("Test Todo", "Test Description", Guid.NewGuid()));
+            var todo = Todo.Create("Test Todo", "Test Description", Guid.NewGuid());
+            todoRepository.GetById(Arg.Any<Guid>()).Returns(todo);
 
             var handler = new CompleteTodoHandler(todoRepository, unitOfWork);
             var command = new CompleteTodoCommand(Guid.NewGuid());

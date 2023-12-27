@@ -1,10 +1,19 @@
-﻿namespace Thunders.CRUD.Application.Todos.ListAllTodo
+﻿using Thunders.CRUD.Domain.Todos.Repositories;
+
+namespace Thunders.CRUD.Application.Todos.ListAllTodo
 {
-    public class ListAllTodoHandler : IRequestHandler<ListAllTodoQuery, List<ListAllTodoResult>>
+    public class ListAllTodoHandler(ITodoRepository todoRepository) : IRequestHandler<ListAllTodoQuery, List<ListAllTodoResult>>
     {
-        Task<List<ListAllTodoResult>> IRequestHandler<ListAllTodoQuery, List<ListAllTodoResult>>.Handle(ListAllTodoQuery request, CancellationToken cancellationToken)
+        private readonly ITodoRepository todoRepository = todoRepository;
+
+        public Task<List<ListAllTodoResult>> Handle(ListAllTodoQuery request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var models = todoRepository.GetAll();
+            var result = models
+                .Select(model => new ListAllTodoResult(model))
+                .ToList();
+
+            return Task.FromResult(result);
         }
     }
 }

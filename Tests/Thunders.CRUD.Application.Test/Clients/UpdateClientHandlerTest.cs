@@ -58,8 +58,8 @@ namespace Thunders.CRUD.Application.Test.Clients
         {
             var clientRepository = Substitute.For<IClientRepository>();
             var unitOfWork = Substitute.For<IUnitOfWork>();
-            clientRepository.GetById(Arg.Any<Guid>())
-                .Returns(new Client(Guid.NewGuid(), "Everton", "everton@gmail.com", "Dev"));
+            var client = new Client(Guid.NewGuid(), "Everton", "everton@gmail.com", "Dev");
+            clientRepository.GetById(Arg.Any<Guid>()).Returns(client);
 
             var handler = new UpdateClientHandler(clientRepository, unitOfWork);
             var command = new UpdateClientCommand(Guid.NewGuid(), "test@example.com", "Developer");

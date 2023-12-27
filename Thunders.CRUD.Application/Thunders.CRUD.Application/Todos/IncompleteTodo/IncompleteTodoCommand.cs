@@ -8,6 +8,7 @@
 
         public IncompleteTodoCommand(Guid id)
         {
+            this.Id = id;
         }
 
         public Guid Id { get; set; }

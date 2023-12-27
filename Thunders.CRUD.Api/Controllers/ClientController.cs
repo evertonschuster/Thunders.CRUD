@@ -17,7 +17,6 @@ namespace Thunders.CRUD.Api.Controllers
         /// <summary>
         /// Get a created client
         /// </summary>
-        /// <param name="clientDto">Client object</param>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(GetByIdClientResult), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
@@ -33,7 +32,7 @@ namespace Thunders.CRUD.Api.Controllers
         /// <summary>
         /// Create a new client
         /// </summary>
-        /// <param name="clientDto">Client object</param>
+        /// <param name="command">Client object</param>
         [HttpPost]
         [ProducesResponseType(typeof(CreateClientResult), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
@@ -49,7 +48,7 @@ namespace Thunders.CRUD.Api.Controllers
         /// Update an existing client
         /// </summary>
         /// <param name="id">Client id</param>
-        /// <param name="clientDto">Client object</param>
+        /// <param name="command">Client object</param>
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(UpdateClientResult), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]

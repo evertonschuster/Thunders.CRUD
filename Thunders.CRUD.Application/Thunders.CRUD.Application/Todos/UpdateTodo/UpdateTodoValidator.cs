@@ -1,12 +1,12 @@
 ﻿using Thunders.CRUD.Domain.Clients.Repositories;
 
-namespace Thunders.CRUD.Application.Todos.CreateTodo
+namespace Thunders.CRUD.Application.Todos.UpdateTodo
 {
-    public class CreateTodoValidator : AbstractValidator<CreateTodoCommand>
+    public class UpdateTodoValidator : AbstractValidator<UpdateTodoCommand>
     {
         private readonly IClientRepository clientRepository;
 
-        public CreateTodoValidator(IClientRepository clientRepository)
+        public UpdateTodoValidator(IClientRepository clientRepository)
         {
             this.clientRepository = clientRepository;
 

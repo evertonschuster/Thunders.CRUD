@@ -1,7 +1,19 @@
-﻿namespace Thunders.CRUD.Application.Todos.ListAllTodo
+﻿using Thunders.CRUD.Domain.Todos.Models;
+
+namespace Thunders.CRUD.Application.Todos.ListAllTodo
 {
-    internal class ListAllTodoResult
+    public class ListAllTodoResult
     {
+        public ListAllTodoResult(Todo model)
+        {
+            Id = model.Id;
+            Title = model.Title;
+            Description = model.Description;
+            ClientId = model.ClientId;
+            IsCompleted = model.IsCompleted;
+            IsClosed = model.IsClosed;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -24,6 +36,16 @@
         /// Todo client id
         /// </summary>
         /// <example>00000000-0000-0000-0000-000000000000</example>
-        public Guid ClientId { get; }
+        public Guid? ClientId { get; }
+
+        /// <summary>
+        /// Is true when todo completed
+        /// </summary>
+        public bool IsCompleted { get; }
+
+        /// <summary>
+        /// Is false when todo closed
+        /// </summary>
+        public bool IsClosed { get; }
     }
 }

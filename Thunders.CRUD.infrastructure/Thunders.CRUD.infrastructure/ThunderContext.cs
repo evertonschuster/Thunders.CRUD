@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Thunders.CRUD.Domain.Clients.Models;
+using Thunders.CRUD.Domain.Todos.Models;
 using Thunders.CRUD.infrastructure.Converters;
 
 namespace Thunders.CRUD.infrastructure
@@ -7,6 +8,7 @@ namespace Thunders.CRUD.infrastructure
     public class ThunderContext : DbContext
     {
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Todo> Todos { get; set; }
 
         public ThunderContext(DbContextOptions<ThunderContext> options) : base(options)
         {
@@ -30,6 +32,19 @@ namespace Thunders.CRUD.infrastructure
                 .HasMaxLength(100);
 
 
+            modelBuilder.Entity<Todo>()
+                .HasQueryFilter(b => b.DeletedAt == null);
+            modelBuilder.Entity<Todo>()
+                .Property(e => e.Title)
+                .HasMaxLength(100);
+            modelBuilder.Entity<Todo>()
+                .Property(e => e.Description)
+                .HasMaxLength(100);
+            modelBuilder.Entity<Todo>()
+                .HasOne<Client>()
+                .WithMany();
+
+
 
 
 
@@ -37,6 +52,11 @@ namespace Thunders.CRUD.infrastructure
             modelBuilder.Entity<Client>()
                 .Ignore(e => e.Events);
             modelBuilder.Entity<Client>()
+                .Ignore(e => e.Notificacoes);
+
+            modelBuilder.Entity<Todo>()
+                .Ignore(e => e.Events);
+            modelBuilder.Entity<Todo>()
                 .Ignore(e => e.Notificacoes);
 
 

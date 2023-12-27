@@ -11,7 +11,7 @@ namespace Thunders.CRUD.Application.Todos.CreateTodo
             ClientId = Guid.Empty;
         }
 
-        public CreateTodoCommand(string title, string description, Guid clientId)
+        public CreateTodoCommand(string title, string description, Guid? clientId)
         {
             Title = title;
             Description = description;
